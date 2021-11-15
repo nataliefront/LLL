@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/png" href="./img/leaf.png">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" />
+    <title>Massage</title>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <a href="./index.html" class="navbar_logo">Live <span>Love</span> Laugh</a>
+        <div class="navbar_toggle" id="mobile_menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <div class="navbar_menu">
+            <a href="./index.html" class="navbar_link">Головна</a>
+            <a href="./health.html" class="navbar_link">Здоров'я</a>
+            <a href="./food.html" class="navbar_link">Здорова їжа</a>
+            <a href="./store.html" class="navbar_link">Магазин</a>
+            <a href="./massage.html" class="navbar_link">Масаж</a>
+            <a href="./courses.html" class="navbar_link">Курси масажу</a>
+            <div class="navbar_social_icons">
+                <a href="https://www.facebook.com/kseniya1910" class="social_icon_link" target="_blank"><i
+                        class="fab fa-facebook-square"></i></a>
+                <a href="https://www.instagram.com/kseniyamiroschenko/" class="social_icon_link" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Massage Section -->
+
+    <div class="massage">
+        <div class="massage_container">
+            <h2>Масаж у Львові</h2>
+            <div class="massage_wrapper">
+                <div class="massage_image">
+                    <img src="img/massage/kseniya.jpg" alt="">
+                </div>
+                <div class="massage_div">
+                    <div class="massage_subtitle">Мірощенко Ксенія</div>
+                    <div class="massage_text">
+                        <p>Досвід роботи масажистом більше 25 років.</p>
+                        <p>В наявності дипломи та сертифікати.</p>
+                        <p>Професійний підхід до кожного та любов до всіх.</p>
+                        <h3>Спеціалізація:</h3>
+                        <div class="massage_text_div">
+                            <i class="fas fa-spa"></i>
+                            <p>Лікувально-профілактичний масаж</p>
+                        </div>
+                        <div class="massage_text_div">
+                            <i class="fas fa-spa"></i>
+                            <p>Лімфодренажній масаж</p>
+                        </div>
+                        <div class="massage_text_div">
+                            <i class="fas fa-spa"></i>
+                            <p>Антицелюлітний масаж</p>
+                        </div>
+                        <div class="massage_text_div">
+                            <i class="fas fa-spa"></i>
+                            <p>Масаж обличчя</p>
+                        </div>
+                        <div class="massage_text_div">
+                            <i class="fas fa-spa"></i>
+                            <p>Медовий масаж</p>
+                        </div>
+                        <div class="massage_text_div">
+                            <i class="fas fa-spa"></i>
+                            <p>Вісцеральний масаж</p>
+                        </div>
+                        <div class="massage_text_div">
+                            <i class="fas fa-spa"></i>
+                            <p>Тайський ток-сен масаж</p>
+                        </div>
+                        <p>Тривалість сеансу - 1,5 години.</p>
+                        <p>Вартість - 800 грн.</p>
+                    </div>
+                    <div class="massage_button_div">
+                        <a href="viber://chat/?number=%2B380990491864" class="massage_button">Записатися</a>
+                    </div>
+                    <div class="massage_button_div">
+                        <button class="massage_button_modal" data-modal>Залишити питання</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer Section -->
+    <div class="footer">
+        <div class="footer_container">
+            <div class="footer_wrapper">
+                <a href="./index.html" class="footer_logo">Live Love Laugh</a>
+                <div class="footer_menu">
+                    <div>
+                        <a href="./index.html" class="footer_link">Головна</a>
+                        <a href="./health.html" class="footer_link">Здоров'я</a>
+                        <a href="./food.html" class="footer_link">Здорова їжа</a>
+                    </div>
+                    <div>
+                        <a href="./store.html" class="footer_link">Магазин</a>
+                        <a href="./massage.html" class="footer_link">Масаж</a>
+                        <a href="./courses.html" class="footer_link">Курси масажу</a>
+                    </div>
+                </div>
+                <div class="social_icons">
+                    <a href="https://www.facebook.com/kseniya1910" class="social_icon_link" target="_blank"><i
+                            class="fab fa-facebook-square"></i></a>
+                    <a href="https://www.instagram.com/kseniyamiroschenko/" class="social_icon_link" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                </div>
+                <div class="footer_rights">Live Love Laugh @2021 All Rights Reserved.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal">
+        <div class="modal_container">
+            <div class="modal_body">
+                <div class="modal_close" data-close><i class="fas fa-times"></i></div>
+                <h3>Є запитання?</h3>
+                <form action="telegram.php" class="form_body" method="POST">
+                    <div>
+                        <input type="text" class="modal_input" name="user_name" placeholder="Напишіть ім'я">
+                    </div>
+                    <div>
+                        <input type="number" class="modal_input" name="user_phone" placeholder="Напишіть телефон">
+                    </div>
+                    <div>
+                        <textarea id="forMessage" class="modal_input" name="user_message"
+                            placeholder="Напишіть запитання"></textarea>
+                    </div>
+                    <div class="modal_button_div">
+                        <button type="submit" class="modal_button">Відправити</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/modal.js"></script>
+</body>
+
+</html>

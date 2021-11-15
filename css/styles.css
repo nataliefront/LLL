@@ -1,0 +1,1789 @@
+:root {
+    --white: #fff;
+    --sand: #dad2cb;
+    --dark-sand: #dda97b;
+    --orange: #fc7d07;
+    --light-green: #9EC28C;
+    --green: #538d4c;
+    --black: #020000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--dark-sand);
+    border-radius: 3px;
+}
+
+body {
+    font-family: 'Vollkorn', serif;
+}
+
+/* Navbar */
+
+.navbar {
+    background: linear-gradient(90deg, rgb(158, 194, 140) 0%, rgb(83,141,76) 100%);
+    height: 60px;
+    padding: 20px calc((100vw - 1200px) /2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.navbar_logo {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0 1rem;
+    font-size: 26px;
+}
+
+.navbar_logo:hover,
+.navbar_logo:active {
+    color: var(--black);
+    transition: 0.3s;
+}
+
+.navbar_logo > span {
+    color: var(--white);
+    animation-name: span;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes span {
+    0% {
+        color: var(--white);
+    }
+    50% {
+        color: #ca2168;
+    }
+    100% {
+        color: var(--white);
+    }
+}
+
+.navbar_link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 0 24px;
+    font-size: 24px;
+}
+
+.navbar_link:hover {
+    color: var(--black);
+    transition: 0.3s;
+}
+
+.navbar_social_icons {
+    display: none;
+}
+
+@media screen and (max-width: 1200px) {
+
+    body._lock {
+        overflow: hidden;
+    }
+
+    .navbar_menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        top: 59px;
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+    }
+
+    .navbar_menu.active {
+        background: linear-gradient(90deg, rgb(158, 194, 140) 0%, rgb(83,141,76) 100%);
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 5;
+    }
+
+    .navbar_link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 14px;
+        font-size: 28px;
+        font-weight: 500;
+        overflow: auto;
+    }
+
+    .navbar_toggle {
+        cursor: pointer;
+    }
+
+    .navbar_toggle .bar {
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        transition: all 0.5s ease-in-out;
+        background-color: var(--white);
+        display: block;
+    }
+
+    #mobile_menu {
+        position: absolute;
+        top: 30%;
+        right: 5%;
+    }
+
+    #mobile_menu.is-active .bar:nth-child(2) {
+        opacity: 0;
+        transition: 0.5s ease-out;
+    }
+
+    #mobile_menu.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        transition: 0.5s ease-out;
+    }
+
+    #mobile_menu.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        transition: 0.5s ease-out;
+    }
+
+    .navbar_social_icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 14px;
+    }
+}
+
+@media screen and (max-height: 420px) {
+
+    .navbar_link {
+        margin: 0px;
+        line-height: 36px;
+    }
+
+    .navbar_social_icons {
+        margin: 0;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Footer Section */
+
+.footer {
+    background: linear-gradient(90deg, rgb(158, 194, 140) 0%, rgb(83,141,76) 100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem calc((100vw - 1200px) / 2);
+}
+
+.footer_container {
+    justify-content: center;
+}
+
+.footer_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer_logo {
+    color: var(--white);
+    font-size: 28px;
+    text-decoration: none;
+    margin-bottom: 28px;
+}
+
+.footer_logo:hover,
+.footer_logo:active {
+    color: var(--black);
+    transform: scale(1.1);
+    transition: 0.7s;
+}
+
+.footer_menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;
+    padding: 0 5px 28px 5px;
+}
+
+.footer_menu > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_link {
+    text-decoration: none;
+    font-size: 26px;
+    color: var(--black);
+    line-height: 36px;
+}
+
+.social_icons {
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+.social_icon_link {
+    font-size: 36px;
+    color: var(--white);
+    padding: 0 36px;
+}
+
+.fa-facebook-square:hover,
+.fa-facebook-square:active {
+    color: #2c1b77;
+    transition: 0.7s;
+    transform: scale(1.3);
+}
+
+.fa-instagram:hover,
+.fa-instagram:active {
+    color: #711c7c;
+    transition: 0.7s;
+    transform: scale(1.3);
+}
+
+.fa-tiktok:hover,
+.fa-tiktok:active {
+    color: #771b51;
+    transition: 0.7s;
+    transform: scale(1.3);
+}
+
+
+.footer_rights {
+    text-align: center;
+    font-size: 18px;
+    color: var(--white);
+    margin: 0px 10px;
+}
+
+@media screen and (max-width: 440px) {
+
+    .footer_logo {
+        font-size: 24px;
+        margin-bottom: 24px;
+    }
+
+    .footer_menu {
+        width: 280px;
+    }
+    .footer_link {
+        font-size: 20px;
+    }
+    
+    .social_icon_link {
+        font-size: 22px;
+    }
+    
+    .social_icons {
+        margin-bottom: 32px;
+    }
+    
+    .social_icon_link {
+        font-size: 32px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Hero Section */
+
+.hero {
+    background: url('../img/index/image1.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 0.5rem calc((100vw - 1200px) /2);
+    display: flex;
+    justify-content: center;
+}
+
+.hero_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: var(--black);
+}
+
+.hero_main {
+    width: 320px;
+    height: 250px;
+}
+
+.hero_main > h1 {
+    margin: 30px 10px 20px 10px;
+}
+
+.hero_main > p {
+    padding: 0 20px;
+    font-size: 20px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+
+.hero_main > h3 {
+    text-align: end;
+    padding: 0 30px 0 0;
+    font-size: 20px;
+}
+
+.hero_main > div {
+    text-align: end;
+    margin-top: 5px;
+    padding: 0 47px 0 0;
+    font-size: 0px;
+    color: var(--green);
+    position: relative;
+    left: -200px;
+    animation-name: heart;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes heart {
+    0% {
+        left: -200px;
+        font-size: 0px;
+    }
+    100% {
+        left: 0;
+        font-size: 22px;
+    }
+}
+
+.hero_info_gipo {
+    margin: 20px 20px 20px 20px;
+    max-width: 600px;
+    text-align: start;
+    font-size: 20px;
+}
+
+.hero_info_gipo > p:first-child {
+    font-weight: 600;
+}
+
+.hero_info_amosov {
+    margin: 60px 20px 20px 20px;
+    max-width: 600px;
+    text-align: start;
+    font-size: 20px;
+}
+
+.hero_info_amosov > p:first-child {
+    font-weight: 600;
+}
+
+@media screen and (max-width: 460px) {
+
+    .hero {
+        background: url('../img/index/image2.jpg');
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        transition: 1s all ease-in-out;
+        padding: 0;
+    }
+
+    .hero_container {
+        background-color: rgba(255, 255, 255, 0.4);
+        height: 100%;
+    }
+
+}
+
+
+
+
+
+
+
+
+/* Health Section */
+
+.health {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.health_container {
+    height: 100%;
+    width: 100%;
+}
+
+.health_container > h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 10px 10px;
+}
+
+.health_body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.health_item_div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0px auto;
+    max-width: 600px;
+}
+
+.health_link {
+    text-decoration: none;
+}
+
+.health_item {
+    margin: 30px 30px 40px 30px;
+}
+
+.health_image img {
+    width: 240px;
+    border-radius: 100%;
+    padding: 0;
+}
+
+.health_subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 2px 10px 10px 10px;
+    color: var(--black);
+}
+
+@media screen and (max-width: 700px) {
+
+    .health_item_div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .health_item {
+        margin: 10px 10px 40px 10px;
+        max-width: 240px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Food Section */
+
+.food {
+    padding: 0.5rem calc((100vw - 1200px) /2);
+    display: flex;
+    justify-content: center;
+}
+
+.food_container {
+    padding: 0 20px;
+}
+
+.food_container > h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 10px 10px;
+}
+
+
+.food_body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.food_item_div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0px auto;
+    max-width: 600px;
+}
+
+.food_link {
+    text-decoration: none;
+}
+
+.food_item {
+    margin: 30px 30px 40px 30px;
+}
+
+.food_image img {
+    width: 240px;
+    border-radius: 100%;
+    padding: 0;
+}
+
+.food_subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 2px 10px 10px 10px;
+    color: var(--black);
+}
+
+hr {
+    height: 10px;
+    background: linear-gradient(90deg, rgb(252, 125, 7) 0%, rgb(83,141,76) 100%);
+    animation-name: hr;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes hr {
+    0% {
+        background: linear-gradient(90deg, rgb(252, 125, 7) 0%, rgb(83,141,76) 100%);
+    }
+    50% {
+        background: linear-gradient(90deg, rgb(83,141,76) 0%, rgb(252, 125, 7) 100%);
+    }
+    100% {
+        background: linear-gradient(90deg, rgb(252, 125, 7) 0%, rgb(83,141,76) 100%);
+    }
+}
+
+.food_nutritional {
+    max-width: 600px;
+}
+
+.food_nutritional > h3 {
+    font-size: 22px;
+    text-align: center;
+    margin: 20px 0 15px 0;
+}
+
+.food_div {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+.fa-carrot,
+.fa-apple-alt,
+.fa-lemon {
+    font-size: 18px;
+    margin: 3px 7px 0 0;
+    color: var(--orange);
+}
+
+.fa-seedling {
+    font-size: 18px;
+    margin: 3px 7px 0 0;
+    color: var(--orange);
+    animation-name: seed;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes seed {
+    0% {
+        color: var(--orange);
+    }
+    50% {
+        color: var(--green);
+    }
+    100% {
+        color: var(--orange);
+    }
+}
+
+
+.food_div > div > p {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.food_div > div > p:first-child {
+    font-weight: 600;
+}
+
+.food_nutritional_button_div {
+    display: flex;
+    justify-content: center;
+}
+
+.food_nutritional_button {
+    padding: 18px 40px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 50px;
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+}
+
+@media screen and (max-width: 700px) {
+
+    .food_item_div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .food_item {
+        margin: 10px 10px 40px 10px;
+        max-width: 240px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Store Section */
+
+.store_container > h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 0 10px;
+}
+
+.store_body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.store_info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 10px 10px 10px;
+}
+
+.store_body_social {
+    display: flex;
+    justify-content: center;
+}
+
+.store_body_link {
+    padding: 18px 40px;
+    margin: 15px 0;
+    border: none;
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s ease;
+    
+}
+
+.store_item_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.store_item {
+    position: relative;
+    flex: 0 1 50%;
+    padding-bottom: 110px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.store_image img{
+    max-width: 100%;
+}
+
+.store_subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 10px 10px 0 10px;
+}
+
+.store_text {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+
+.store_button_div {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.store_button {
+    padding: 18px 40px;
+    margin: 20px 0;
+    border: none;
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s ease;
+    border-radius: 40px;
+}
+
+.store_button:hover {
+    background-color: var(--black);
+    transition: 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+
+    .store_item_div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .store_item {
+        margin: 10px 10px 30px 10px;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Massage Section */
+
+.massage_container > h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 0 10px;
+}
+
+.massage_wrapper {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 100px;
+}
+
+.massage_image {
+    max-width: 50%;
+}
+
+.massage_image img {
+    max-width: 100%;
+}
+
+.massage_div {
+    max-width: 50%;
+    margin: 20px 5px 5px 70px;
+}
+
+.massage_subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin: 0 0 16px 0;
+}
+
+.massage_text {
+    font-size: 20px;
+    line-height: 36px;
+}
+
+.massage_text > p {
+    margin: 6px 0;
+}
+
+.massage_text > h3 {
+    text-align: center;
+    font-size: 22px;
+    margin: 10px 0 0 0;
+} 
+
+.massage_text_div {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+.fa-spa {
+    font-size: 18px;
+    margin: 8px 7px 0 0;
+    color: var(--green);
+}
+
+.massage_button_div {
+    display: flex;
+    justify-content: center;
+}
+
+.massage_button {
+    padding: 18px 40px;
+    margin: 20px 0;
+    border: none;
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s ease;
+    border-radius: 40px;
+}
+
+.massage_button_modal {
+    font-family: 'Vollkorn', serif;
+    padding: 18px 40px;
+    margin: 30px 0;
+    border: none;
+    background-color: var(--dark-sand);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s ease;
+    border-radius: 40px;
+}
+
+@media screen and (max-width: 800px) {
+
+    .massage_wrapper {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .massage_image {
+        max-width: 100%;
+    }
+
+    .massage_div {
+        max-width: 100%;
+        margin: 20px 5px 5px 5px;
+    }
+
+    .massage_subtitle {
+        margin: 0;
+    }
+
+}
+
+
+
+
+
+
+/* Modal */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.modal_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto;
+    width: 300px;
+    height: 420px;
+}
+
+.modal_body {
+    position: relative;
+    width: 300px;
+    height: 420px;
+    padding: 40px 10px;
+    background-color: var(--light-green);
+    border-radius: 10px;
+}
+
+.modal_close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+}
+
+.modal_body > h3 {
+    text-align: center;
+    font-size: 22px;
+}
+
+.form_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal_input {
+    font-family: 'Vollkorn', serif;
+    background: transparent;
+    margin-top: 20px;
+    width: 280px;
+    padding: 6px;
+    font-size: 17px;
+    outline: none;
+    border: 2px solid var(--black);
+    border-radius: 7px;
+    transition: all 0.5s ease 0s;
+}
+
+input.modal_input::placeholder {
+    color: var(--black);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+textarea.modal_input {
+    font-size: 18px;
+    min-width: 280px;
+    min-height: 100px;
+    resize: none;
+    width: 100%;
+}
+
+textarea.modal_input::placeholder {
+    color: var(--black);
+}
+
+.modal_button_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 12px 0 0 0;
+}
+
+.modal_button {
+    width: 200px;
+    background: transparent;
+    border: 4px solid var(--black);
+    border-radius: 15px;
+    color: var(--black);
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+@media screen and (max-height: 420px) {
+
+    .modal_container {
+        margin: 5px auto;
+        height: 310px;
+    }
+    
+    .modal_body {
+        height: 310px;
+    }
+
+    .modal_input {
+        margin-top: 5px;
+    }
+    
+    textarea.modal_input {
+        min-height: 40px;
+    }
+
+}
+
+
+
+
+
+
+
+
+/* Courses Section */
+
+.courses_container > h2 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 0 10px;
+}
+
+.courses_body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.courses_item_div {
+    display: flex;
+    flex-direction: row;
+    margin: 0px auto;
+}
+
+.courses_item {
+    position: relative;
+    padding-bottom: 100px;
+    margin: 10px 30px;
+    flex: 0 1 50%;
+    max-width: 500px;
+}
+
+.courses_image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.courses_image img{
+    max-width: 100%;
+    padding: 0;
+}
+
+.courses_subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 10px 10px 0 10px;
+}
+
+.courses_text {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.courses_button_div {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.courses_button {
+    padding: 18px 40px;
+    margin: 20px 0;
+    border: none;
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s ease;
+    border-radius: 40px;
+}
+
+@media screen and (max-width: 800px) {
+
+    .courses_item_div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .courses_item {
+        margin: 10px 10px 30px 10px;
+    }
+
+}
+
+
+
+
+
+/* Cost Section */
+
+.cost {
+    background-color: #fafafa;
+}
+
+.cost_body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cost_body > h2 {
+    text-align: center;
+    font-size: 24px;
+    margin: 20px 10px 10px 10px;
+}
+
+.cost_text {
+    margin: 10px 20px 0 20px;
+    font-size: 18px;
+}
+
+.calculator {
+    margin: 0 auto;
+    padding: 20px 120px 10px 120px;
+    font-size: 18px;
+}
+
+.calculator_text {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.calculator_quantity_div {
+    padding: 10px 30px;
+    border: 5px solid var(--green);
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.calculator_quantity,
+.calculator_course {
+    margin: 10px 5px;
+}
+
+.calculator_course_div {
+    padding: 10px 30px;
+    border: 5px solid var(--green);
+    border-radius: 5px;
+}
+
+.calculator_buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 15px 0 0 0;
+}
+
+.calculator_button button{
+    margin-right: 10px;
+    background-color: var(--green);
+    border: 4px solid #ffffff;
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.calculator_button_clear button {
+    background-color: var(--green);
+    border: 4px solid #ffffff;
+    border-radius: 30px;
+    color: #ffffff;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.calculator_total,
+.calculator_total_text {
+    text-align: center;
+    max-width: 400px;
+    padding: 5px 0;
+}
+
+@media screen and (max-width: 800px)  {
+
+    .calculator {
+        padding: 20px 5px 10px 5px;
+    }
+
+    .calculator_quantity_div {
+        padding: 10px 5px;
+    }
+    
+    .calculator_course_div {
+        padding: 10px 5px;
+    }
+
+}
+
+@media screen and (max-width: 440px) {
+
+    .calculator_quantity,
+    .calculator_course {
+    margin: 15px 10px;
+}
+
+    .calculator_buttons {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0 0 10px;
+        align-items: center;
+    }
+
+    .calculator_button button {
+        margin: 0 0 10px 0;
+    }
+
+    .calculator_total,
+    .calculator_total_text {
+    max-width: 280px;
+}
+
+}
+
+
+
+
+
+
+
+
+
+/* Health Section */
+/* Antibiotics Section */
+/* Hunger Section */
+/* Soda Section */
+/* Castoroil Section */
+
+.antibiotics,
+.hunger,
+.soda,
+.castoroil {
+    display: flex;
+    justify-content: center;
+}
+
+.antibiotics_container,
+.hunger_container,
+.soda_container,
+.castoroil_container {
+    background-color: rgba(255, 255, 255, 0.4);
+    height: 100%;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.antibiotics_container > h1,
+.hunger_container > h1,
+.soda_container > h1,
+.castoroil_container > h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 10px 10px;
+}
+
+.antibiotics_main,
+.hunger_main,
+.soda_main,
+.castoroil_main {
+    max-width: 600px;
+    margin: 20px 0 10px 0;
+}
+
+.antibiotics_main > h3,
+.hunger_main > h3,
+.soda_main > h3,
+.castoroil_main > h3 {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+.antibiotics_main > p,
+.hunger_main > p,
+.soda_main > p,
+.castoroil_main > p {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.hunger_bottom_div,
+.soda_bottom_div {
+    display: flex;
+    justify-content: center;
+}
+
+.hunger_bottom,
+.soda_bottom {
+    padding: 18px 40px;
+    margin: 20px 0 20px 0;
+    border: none;
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 22px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s ease;
+    border-radius: 40px;
+}
+
+.antibiotics_body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    max-width: 600px;
+}
+
+.antibiotics_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 20px 0;
+}
+
+.antibiotics_subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px;
+    color: var(--black);
+}
+
+.antibiotics_image img {
+    max-width: 450px;
+    border-radius: 100%;
+}
+
+.fa-check-circle {
+    font-size: 18px;
+    margin: 3px 5px 0 0;
+    color: var(--green);
+}
+
+.antibiotics_text {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.attention {
+    font-size: 18px;
+    line-height: 30px;
+    margin: 40px 0 10px 0;
+}
+
+.attention > span {
+    color: var(--orange);
+}
+
+@media screen and (max-width: 680px) {
+
+    .antibiotics_image img {
+        max-width: 260px;
+        border-radius: 100%;
+        transition: all 0.5s ease-in-out;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* Food Section */
+/* Smoothies Section */
+/* Superfood Section */
+/* Salads Section */
+/* Sweets Section */
+
+.smoothies,
+.superfood,
+.salads,
+.sweets {
+    display: flex;
+    justify-content: center;
+}
+
+.smoothies_container,
+.superfood_container,
+.salads_container,
+.sweets_container {
+    padding: 0 20px;
+}
+
+.smoothies_container > h1,
+.superfood_container > h1,
+.salads_container > h1,
+.sweets_container > h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 10px 10px;
+}
+
+.smoothies_main,
+.superfood_main,
+.salads_main,
+.sweets_main {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.smoothies_main > h3,
+.superfood_main > h3,
+.salads_main > h3,
+.sweets_main > h3 {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 22px;
+}
+
+.smoothies_main > p,
+.superfood_main > p,
+.salads_main > p,
+.sweets_main > p {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.smoothies_body,
+.superfood_body,
+.salads_body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    max-width: 600px;
+}
+
+.smoothies_item,
+.superfood_item,
+.salads_item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0 20px 0;
+}
+
+.smoothies_item > h3,
+.superfood_item > h3,
+.salads_item > h3 {
+    margin: 10px 0 5px 0;
+}
+
+.smoothies_subtitle,
+.superfood_subtitle,
+.salads_subtitle {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 10px;
+    color: var(--black);
+}
+
+.smoothies_image img,
+.superfood_image img {
+    max-width: 450px;
+    border-radius: 100%;
+}
+
+.salads_image img {
+    max-width: 450px;
+    border-radius: 2%;
+}
+
+.smoothies_div,
+.superfood_div,
+.salads_div,
+.sweets_div {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+.fa-vial {
+    font-size: 18px;
+    margin: 3px 5px 0 0;
+    color: var(--green);
+}
+
+.smoothies_div > p,
+.superfood_div > p,
+.salads_div > p,
+.sweets_div > p {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.smoothies_text,
+.superfood_text {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.sweets_recipes {
+    padding: 0.5rem calc((100vw - 1200px) /2);
+    display: flex;
+    justify-content: center;
+}
+
+.sweets_recipes_main > h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 10px 10px;
+}
+
+.sweets_recipes_body {
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.sweets_recipes_item_div {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin: 0px auto;
+    max-width: 600px;
+}
+
+.sweets_recipes_link {
+    text-decoration: none;
+}
+
+.sweets_recipes_item {
+    margin: 30px 30px 40px 30px;
+}
+
+.sweets_recipes_image img {
+    width: 240px;
+    border-radius: 100%;
+    padding: 0;
+}
+
+.sweets_recipes_subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 2px 10px 10px 10px;
+    color: var(--black);
+}
+
+@media screen and (max-width: 700px) {
+
+    .smoothies_image img,
+    .superfood_image img {
+        max-width: 260px;
+        border-radius: 100%;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .salads_image img {
+        max-width: 260px;
+        transition: all 0.5s ease-in-out;
+    }
+
+    .sweets_recipes_item_div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sweets_recipes_item {
+        margin: 10px 10px 40px 10px;
+        max-width: 240px;
+    }
+
+}
+
+
+
+
+
+/* Recipes Section */
+
+.recipes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.recipes_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 20px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.recipes_container > h1 {
+    text-align: center;
+    font-size: 32px;
+    margin: 20px 10px 10px 10px;
+}
+
+.recipes_image {
+    display: flex;
+    justify-content: center;
+}
+
+.recipes_image img {
+    max-width: 450px;
+    border-radius: 2%;
+}
+
+.offer_slider_counter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 4px 2px;
+    color: var(--green);
+}
+
+.offer_slider_prev,
+.offer_slider_next {
+    margin: 4px 6px 0 6px;
+    font-size: 26px;
+}
+
+.current {
+    font-size: 28px;
+    margin: 0 2px 0 0;
+}
+
+.slider_element {
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.total {
+    font-size: 18px;
+}
+
+.recipes_container > h3 {
+    margin: 10px 0 0 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+.recipes_div {
+    display: flex;
+    flex-direction: row;
+    margin: 10px 0;
+}
+
+.recipes_div > p {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.recipes_text {
+    font-size: 18px;
+    line-height: 30px;
+}
+
+.recipes_link {
+    padding: 10px 30px;
+    margin: 15px 0;
+    border: none;
+    border-radius: 15px;
+    background-color: var(--green);
+    color: var(--white);
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+    transition: 0.5s ease;
+    text-align: center;
+}
+
+.fa-reply {
+    margin-left: 8px;
+    font-size: 24px;
+    color: var(--white);
+}
+
+@media screen and (max-width: 700px) {
+
+    .recipes_image img {
+        max-width: 260px;
+        transition: all 0.5s ease-in-out;
+    }
+
+}
